@@ -1,0 +1,1305 @@
+{
+	"info": {
+		"_postman_id": "98269faf-6c18-45ac-90d8-de28a44d7cd3",
+		"name": "womenline",
+		"description": "WomenLine – API Collection\n\nThis Postman collection contains all backend API endpoints for the WomenLine project – an AI-powered wellness and safety platform for women.\n\n✨ Key Features Covered:\n\n- User Authentication (JWT-based login/register)\n    \n- Journal logging with optional voice notes\n    \n- Period tracker (log, fetch cycle data)\n    \n- Green Credits (MaCoin) system with redeemable rewards\n    \n- File uploads (e.g., voice notes, images)\n    \n- PDF exports of user summaries\n    \n- WhatsApp integration via Twilio\n    \n- Security audit logging for critical events\n    \n\n🚀 Use the collection to:\n\n- Register & login users\n    \n- Create/view journal and period logs\n    \n- Earn & redeem credits\n    \n- Export user data as PDFs\n    \n- Send WhatsApp notifications\n    \n- Upload files (voice/image)\n    \n\n📎 All protected routes require:  \nAuthorization: Bearer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46164744",
+		"_collection_link": "https://poorvi-1004195.postman.co/workspace/Poorvi's-Workspace~af339e28-7482-497f-8880-9cd76efbeffa/collection/46164744-98269faf-6c18-45ac-90d8-de28a44d7cd3?action=share&source=collection_link&creator=46164744"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Poorvi\",\r\n  \"email\": \"poorvi@example.com\",\r\n  \"password\": \"password123\",\r\n  \"phone\": \"+919074554804\"\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\": \"poorvi@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "journals",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/journals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"journals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "journals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mood\": \"Peaceful\",\r\n  \"note\": \"Feeling relaxed\",\r\n  \"periodDay\": \"3\",\r\n  \"date\": \"2025-07-20\",\r\n  \"voiceNote\": \"uploads\\\\voice\\\\voice-1753684139384.wav\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/journals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"journals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/poorv/OneDrive/Desktop/bini-cartoon.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/upload/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"upload",
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "earn-credits",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"68a5d22f0bb871f7963b65aa\",\r\n  \"activityType\": \"meditation\",\r\n  \"source\": \"app\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/earn-credits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"earn-credits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redeem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rewardId\": \"68a192c3f1661a9d3c62b312\",\r\n  \"cost\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/redeem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"redeem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reward",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "period-log",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"687905303317650ba386d5be\",\r\n  \"startDate\": \"2025-07-20\",\r\n  \"endDate\": \"2025-07-25\",\r\n  \"symptoms\": [\"cramps\", \"fatigue\"],\r\n  \"mood\": \"Happy\",\r\n  \"notes\": \"Heavy flow\",\r\n  \"cycleLength\": 28\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/period-log",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"period-log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "period-log",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/period-log/687905303317650ba386d5be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"period-log",
+						"687905303317650ba386d5be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-credit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/user-credits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"user-credits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "whatsapp send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+919074554804\",\r\n    \"message\": \"Hello0 poorvi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/whatsapp/send-whatsapp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"whatsapp",
+						"send-whatsapp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "voice upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTYzYjcyOTU2MzhjNjBkNTQwMGI4MiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NzI2NDUzLCJleHAiOjE3NTU3MzAwNTN9.-i3Uchxb8oBEE3kZczEbVUkrv5e1LCmM-2E8k4G-Q0g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "voiceFile",
+							"type": "file",
+							"src": "/C:/Users/poorv/OneDrive/Desktop/bini-voice.mp3"
+						},
+						{
+							"key": "moodTag",
+							"value": "happy",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "45",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "morning",
+							"type": "text"
+						},
+						{
+							"key": "audiotype",
+							"value": "meditation",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/voice/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"voice",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-abuse",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"message\": \"Someone shouted in hospital\",\r\n  \"reportedBy\": \"user123\" // optional\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/abuse/report-abuse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"abuse",
+						"report-abuse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "export-summary",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGNjOTA4Mzk2N2NkZGNhMWUxYWQ5ZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU0NTgwNzUyLCJleHAiOjE3NTQ1ODQzNTJ9.tAJ6jNpjA435A5e02Tdz1G-KsfKfdqnHBqgQjdM0NQ0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/pdf/export-summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"pdf",
+						"export-summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forumpost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My first forum post\",\r\n  \"content\": \"This is the content of my first post\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/forum/forum-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"forum",
+						"forum-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-abuse",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/abuse/report-abuse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"abuse",
+						"report-abuse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "appointments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTZiN2IyYjI1ZGUxZTQyZGE5YmUzNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NzU2NjA4LCJleHAiOjE3NTU3NjAyMDh9.WJ8nTJip9S3IH7GnSDqJ0z8Yb13YUUotddl5KQ_vxf4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"68a5d22f0bb871f7963b65aa\",\r\n  \"doctorName\": \"Dr. Poorvi\",\r\n  \"date\": \"2025-08-15T10:00:00Z\",\r\n  \"timeSlot\": \"10:00 AM - 10:30 AM\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "appointments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyNTczMiwiZXhwIjoxNzU1NzI5MzMyfQ.BT4ukA_Kf1zLwo1HfoIAuVfC-XOC7xsuv19VtULXZN0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "appointments",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTZiN2IyYjI1ZGUxZTQyZGE5YmUzNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NzU2NjA4LCJleHAiOjE3NTU3NjAyMDh9.WJ8nTJip9S3IH7GnSDqJ0z8Yb13YUUotddl5KQ_vxf4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/appointments/68a6b863b25de1e42da9be4b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments",
+						"68a6b863b25de1e42da9be4b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forum-reply",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"reply\": \"badword2 here\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/forum/forum-reply/68a37941288294bd84a132ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"forum",
+						"forum-reply",
+						"68a37941288294bd84a132ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"poorvisahu975@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/send-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"poorvisahu975@gmail.com\",\r\n  \"otp\": \"154920\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/verify-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/auth/token-check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"token-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doctor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/doctor-checklist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"doctor-checklist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checklist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"doctorName\": \"Dr. Example\",\r\n  \"specialization\": \"Cardiology\",\r\n  \"availability\": \"Mon-Fri\",\r\n  \"contact\": \"1234567890\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/checklist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"checklist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/leaderboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"leaderboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forum-replies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/forum/forum-replies/68a37941288294bd84a132ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"forum",
+						"forum-replies",
+						"68a37941288294bd84a132ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redemption-history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/user/redemption-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"user",
+						"redemption-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report-post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"postId\": \"689e1d2cad4d2f49981c79cd\",\r\n  \"reason\": \"Inappropriate content\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/forum/report-post/68a37941288294bd84a132ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"forum",
+						"report-post",
+						"68a37941288294bd84a132ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reports",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTE2NmViMjFmOGQ4M2Q1ODIwODJhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU1NTQzMzg4LCJleHAiOjE3NTU1NDY5ODh9.5aCCbPfkj9V0PmZUTaP0fif8_mY6xpQKY0AykGNBw-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://team5555-womenline-final.onrender.com/api/forum/reports",
+					"protocol": "https",
+					"host": [
+						"team5555-womenline-final",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"forum",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://team5555-womenline-final.onrender.com/health",
+					"protocol": "https",
+					"host": [
+						"team5555-womenline-final",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "error-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/error-test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"error-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/test-success",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"test-success"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "voice-file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/uploads/voice/voice-1755728313505.mp3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"uploads",
+						"voice",
+						"voice-1755728313505.mp3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload pdf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/uploads/pdf/1755543734686.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"uploads",
+						"pdf",
+						"1755543734686.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "whatsapp-reply",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "From",
+							"value": "whatsapp:+919406526837",
+							"type": "text"
+						},
+						{
+							"key": "Body",
+							"value": "hello",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/whatsapp/inbound",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"whatsapp",
+						"inbound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "whatsapp-weekly-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/whatsapp/test-weekly-checklist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"whatsapp",
+						"test-weekly-checklist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-checklist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/checklist/<checklist_id>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"checklist",
+						"<checklist_id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-checklist",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTVkMjJmMGJiODcxZjc5NjNiNjVhYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NTcyMDg4NCwiZXhwIjoxNzU1NzI0NDg0fQ.gB0Js2MsVNBsRI5Zt8k3nATQbyyjazkPeTaxyASNU4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"availability\": \"Mon-Fri 10am-0pm\",\r\n  \"contact\": \"1112223333\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/checklist/68a62cd38e5f6e71aab7bb13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"checklist",
+						"68a62cd38e5f6e71aab7bb13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot-password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"poorvisahu975@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/forgot-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"poorvisahu975@gmail.com\",\r\n  \"otp\": \"529973\",\r\n  \"newPassword\": \"Hello@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/reset-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
