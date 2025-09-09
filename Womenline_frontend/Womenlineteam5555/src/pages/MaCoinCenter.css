@@ -1,0 +1,706 @@
+/* MaCoin Center Styles */
+.macoins-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.macoins-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.macoins-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.macoins-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.error-message {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation */
+.macoins-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-tab {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 15px;
+  background: #f8f9fa;
+  color: #6c757d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.nav-tab:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(67, 233, 123, 0.4);
+}
+
+/* Content */
+.macoins-content {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Overview Tab */
+.macoins-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.credit-display {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 20px;
+  color: white;
+}
+
+.credit-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.credit-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.credit-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.credit-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+}
+
+.credit-info p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.quick-actions h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.action-btn {
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.recent-activity h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border-left: 4px solid #28a745;
+}
+
+.activity-item.spent {
+  border-left-color: #dc3545;
+}
+
+.activity-icon {
+  font-size: 1.2rem;
+}
+
+.activity-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-category {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.activity-time {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.activity-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.activity-amount.earned {
+  color: #28a745;
+}
+
+.activity-amount.spent {
+  color: #dc3545;
+}
+
+/* History Tab */
+.macoins-history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.history-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.history-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  background: white;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.filter-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border-left: 4px solid #28a745;
+}
+
+.history-item.spent {
+  border-left-color: #dc3545;
+}
+
+.transaction-icon {
+  font-size: 1.2rem;
+}
+
+.transaction-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-category {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.transaction-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.transaction-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.transaction-amount.earned {
+  color: #28a745;
+}
+
+.transaction-amount.spent {
+  color: #dc3545;
+}
+
+/* Rewards Tab */
+.macoins-rewards h3 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.reward-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reward-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reward-card.available {
+  border-color: #28a745;
+}
+
+.reward-card.unavailable {
+  border-color: #dc3545;
+  opacity: 0.7;
+}
+
+.reward-header {
+  margin-bottom: 20px;
+}
+
+.reward-header h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.reward-category {
+  background: #e9ecef;
+  color: #6c757d;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.reward-cost {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cost-amount {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.cost-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.redeem-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.redeem-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 233, 123, 0.4);
+}
+
+.redeem-btn.disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Leaderboard Tab */
+.macoins-leaderboard h3 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-item.top-1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 2px solid #ffc107;
+}
+
+.leaderboard-item.top-2 {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%);
+  border: 2px solid #b8b8b8;
+}
+
+.leaderboard-item.top-3 {
+  background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%);
+  border: 2px solid #b8860b;
+}
+
+.position-badge {
+  font-size: 1.5rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.user-avatar {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.user-level {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.user-score {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+.your-position {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.your-position h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+}
+
+.position-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.position-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.position-text {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Exchange Tab */
+.macoins-exchange h3 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.exchange-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.exchange-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-card h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.exchange-card p {
+  margin: 0 0 20px 0;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.exchange-rate {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.exchange-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exchange-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .macoins-container {
+    padding: 15px;
+  }
+  
+  .macoins-header {
+    padding: 20px;
+  }
+  
+  .macoins-header h1 {
+    font-size: 2rem;
+  }
+  
+  .macoins-header p {
+    font-size: 1rem;
+  }
+  
+  .macoins-navigation {
+    gap: 8px;
+  }
+  
+  .nav-tab {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .macoins-content {
+    padding: 20px;
+  }
+  
+  .credit-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .credit-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .credit-amount {
+    font-size: 1.5rem;
+  }
+  
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .rewards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exchange-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .history-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .history-filters {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .macoins-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-tab {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .credit-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .credit-amount {
+    font-size: 1.2rem;
+  }
+  
+  .action-btn {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+} 

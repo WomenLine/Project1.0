@@ -1,0 +1,139 @@
+/* Chatbot Player Responsive Styles */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 90vw !important;
+    height: 60vh !important;
+    bottom: 80px !important;
+    right: 5vw !important;
+    left: 5vw !important;
+  }
+  
+  .chatbot-button {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.2rem !important;
+  }
+  
+  .chatbot-messages {
+    font-size: 0.85rem !important;
+  }
+  
+  .chatbot-input {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: 95vw !important;
+    height: 70vh !important;
+    bottom: 70px !important;
+    right: 2.5vw !important;
+    left: 2.5vw !important;
+  }
+  
+  .chatbot-header {
+    padding: 0.8rem !important;
+  }
+  
+  .chatbot-header-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .chatbot-header-subtitle {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Smooth animations for better UX */
+.chatbot-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chatbot-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Enhanced hover effects */
+.chatbot-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 25px rgba(123, 63, 63, 0.4) !important;
+}
+
+.chatbot-message-user {
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+.chatbot-message-bot {
+  animation: messageSlideIn 0.3s ease-out 0.1s both;
+}
+
+@keyframes messageSlideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Accessibility improvements */
+.chatbot-button:focus {
+  outline: 2px solid #7b3f3f;
+  outline-offset: 2px;
+}
+
+.chatbot-input:focus {
+  outline: 2px solid #7b3f3f;
+  outline-offset: 2px;
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+  .chatbot-window {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+  }
+  
+  .chatbot-message-bot {
+    background: #3a3a3a !important;
+    color: #e0e0e0 !important;
+  }
+  
+  .chatbot-input {
+    background: #3a3a3a !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+  }
+}
+
+/* Print styles - hide chatbot when printing */
+@media print {
+  .chatbot-button,
+  .chatbot-window {
+    display: none !important;
+  }
+}
+

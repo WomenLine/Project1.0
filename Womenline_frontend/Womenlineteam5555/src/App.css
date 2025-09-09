@@ -1,0 +1,934 @@
+body {
+  background: #7b3f3f;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.card {
+  background: #f4bcbc;
+  border-radius: 22px;
+  box-shadow: 0 6px 32px 0 rgba(123, 63, 63, 0.12), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  margin: 2.5rem auto 1.5rem auto;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.card input,
+.card select,
+.card textarea,
+.card button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px 0 rgba(123, 63, 63, 0.18), 0 2px 8px 0 rgba(0,0,0,0.06);
+}
+
+.navbar {
+  background: #7b3f3f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 2px 8px rgba(123, 63, 63, 0.08);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.navbar-right a, .navbar-right select {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.navbar-right a.signup-btn {
+  color: #222;
+  margin-left: 0.5rem;
+}
+
+.navbar-right a:hover, .navbar-right a:focus, .navbar-right select:focus {
+  background: #f4bcbc;
+  color: #7b3f3f;
+}
+
+.navbar-right select {
+  border: none;
+  outline: none;
+  min-width: 90px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 40px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.signup-btn {
+  background: #fff;
+  color: #7b3f3f;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.signup-btn:hover {
+  background: #f4bcbc;
+  color: #7b3f3f;
+}
+
+.macoin-display {
+  background: #ffe066;
+  color: #7b3f3f;
+  border-radius: 10px;
+  padding: 0.4rem 1.2rem;
+  margin: 0 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px rgba(123, 63, 63, 0.08);
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #b97a7a;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border: 1.5px solid #7b3f3f;
+  outline: none;
+  box-shadow: 0 0 0 2px #f4bcbc;
+}
+
+button {
+  background: #7b3f3f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.85rem 2.2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(123, 63, 63, 0.08);
+}
+button:hover, button:focus {
+  background: #a05252;
+  box-shadow: 0 2px 8px rgba(123, 63, 63, 0.12);
+}
+button:disabled {
+  background: #ccc;
+  color: #888;
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid #b97a7a;
+  margin: 1.5rem 0;
+}
+
+.health-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e6bcbc;
+}
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.form-section h3 {
+  color: #7b3f3f;
+  margin-bottom: 0.7rem;
+  margin-top: 0;
+  font-size: 1.18rem;
+}
+
+.health-form label {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  display: block;
+  color: #7b3f3f;
+}
+
+.health-form input,
+.health-form select,
+.health-form textarea {
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.health-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.health-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+.checkbox-row input[type="checkbox"] {
+  margin-top: 2px;
+}
+.checkbox-row label {
+  font-size: 14px;
+  color: #7b3f3f;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.safety-section {
+  margin: 0px auto 2rem auto;
+  background-color: #fff;
+  padding: 18px 18px 8px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(123, 63, 63, 0.08);
+  max-width: 700px;
+}
+.safety-section h1 {
+  text-align: center;
+  color: #7b3f3f;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+.tutorial-step {
+  border-left: 5px solid #ae272c;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+.tutorial-step h2 {
+  color: #362d35;
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+.tutorial-step p {
+  color: #555;
+  line-height: 1.6;
+}
+.tip {
+  background-color: #c664649e;
+  border-left: 4px solid #7a3230;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.98rem;
+}
+.container {
+  text-decoration: underline;
+  color: brown;
+  padding: 12px 0 0 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+@media screen and (max-width: 700px) {
+  .safety-section {
+    padding: 10px 4vw;
+    max-width: 99vw;
+  }
+  .tutorial-step h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0.5rem;
+  }
+  .navbar-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    max-width: 99vw;
+    padding: 1rem;
+  }
+  .health-form {
+    max-width: 98vw;
+    padding: 0 0.5rem;
+  }
+}
+
+.period-tracker-card {
+  background: #fff8f2;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(123, 63, 63, 0.10);
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+.input-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #7b3f3f;
+}
+.input-section input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1.5px solid #b97a7a;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.input-section input:focus {
+  border: 1.5px solid #7b3f3f;
+  outline: none;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 0.5rem 0;
+  gap: 1.5rem;
+}
+.calendar-header h2 {
+  margin: 0 1.5rem;
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.calendar-header button {
+  background: #7b3f3f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.calendar-header button:hover {
+  background: #a05252;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 1rem;
+}
+.day, .date {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.date {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fffdfc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+.period-day { background-color: #f7aaaa !important; }
+.expected-period-day { background-color: #be7b75 !important; }
+.fertile-day { background-color: #b2dfdb !important; }
+.ovulation-day { background-color: #90caf9 !important; font-weight: bold; }
+.legend {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #ebe7e7;
+  border-radius: 10px;
+  font-size: 0.98rem;
+}
+.legend span {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+.color-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+.info-box {
+  background-color: #fff;
+  border-left: 5px solid #a1887f;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.clear-btn {
+  background-color: #bb6565;
+  margin-top: 0;
+}
+.clear-btn:hover {
+  background-color: #d84c4c;
+}
+@media (max-width: 700px) {
+  .period-tracker-card {
+    max-width: 99vw;
+    padding: 1rem 0.5rem;
+  }
+  .calendar-grid {
+    gap: 5px;
+  }
+}
+
+/* Emotion-Aware Styles */
+:root {
+  --emotion-primary: #7b3f3f;
+  --emotion-secondary: #a05252;
+  --emotion-accent: #b97a7a;
+  --emotion-background: #f8f8f8;
+  --emotion-text: #333333;
+  --emotion-card: #FFFFFF;
+  --emotion-border: #b97a7a;
+  --emotion-gradient: linear-gradient(135deg, #7b3f3f, #a05252);
+  --emotion-shadow: 0 4px 15px rgba(123, 63, 63, 0.3);
+}
+
+/* Default theme (original app colors) */
+body.emotion-default {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+/* Emotion-based body classes - only apply when custom emotion is set */
+body.emotion-happy {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-sad {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-anxious {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-angry {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-calm {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-excited {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-tired {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+body.emotion-stressed {
+  background: var(--emotion-background) !important;
+  transition: background 0.5s ease;
+}
+
+/* Emotion-based animations */
+@keyframes pulse-happy {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-sad {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+}
+
+@keyframes pulse-anxious {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes pulse-angry {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes pulse-calm {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+@keyframes pulse-excited {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes pulse-tired {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.99); }
+}
+
+@keyframes pulse-stressed {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes pulse-neutral {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+/* Glow animations */
+@keyframes glow-happy {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 20px var(--emotion-primary), 0 0 30px var(--emotion-secondary); }
+}
+
+@keyframes glow-sad {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 15px var(--emotion-primary), 0 0 25px var(--emotion-secondary); }
+}
+
+@keyframes glow-anxious {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 18px var(--emotion-primary), 0 0 28px var(--emotion-secondary); }
+}
+
+@keyframes glow-angry {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 25px var(--emotion-primary), 0 0 35px var(--emotion-secondary); }
+}
+
+@keyframes glow-calm {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 12px var(--emotion-primary), 0 0 22px var(--emotion-secondary); }
+}
+
+@keyframes glow-excited {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 30px var(--emotion-primary), 0 0 40px var(--emotion-secondary); }
+}
+
+@keyframes glow-tired {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 10px var(--emotion-primary), 0 0 20px var(--emotion-secondary); }
+}
+
+@keyframes glow-stressed {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 16px var(--emotion-primary), 0 0 26px var(--emotion-secondary); }
+}
+
+@keyframes glow-neutral {
+  0%, 100% { box-shadow: 0 0 5px var(--emotion-primary); }
+  50% { box-shadow: 0 0 12px var(--emotion-primary), 0 0 22px var(--emotion-secondary); }
+}
+
+/* Apply animations to emotion-aware elements */
+.emotion-aware {
+  animation: var(--emotion-pulse-animation) 2s infinite;
+}
+
+.emotion-glow {
+  animation: var(--emotion-glow-animation) 3s infinite;
+}
+
+/* Emotion-aware card styles */
+.emotion-card {
+  background: var(--emotion-card) !important;
+  border: 2px solid var(--emotion-border) !important;
+  box-shadow: var(--emotion-shadow) !important;
+  transition: all 0.3s ease !important;
+}
+
+.emotion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--emotion-shadow) !important;
+}
+
+/* Emotion-aware button styles */
+.emotion-button {
+  background: var(--emotion-gradient) !important;
+  color: white !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.emotion-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--emotion-shadow) !important;
+}
+
+/* Emotion-aware text styles */
+.emotion-text {
+  color: var(--emotion-text) !important;
+}
+
+.emotion-text-primary {
+  color: var(--emotion-primary) !important;
+}
+
+.emotion-text-secondary {
+  color: var(--emotion-secondary) !important;
+}
+
+/* Emotion-aware background styles */
+.emotion-bg {
+  background: var(--emotion-background) !important;
+}
+
+.emotion-bg-card {
+  background: var(--emotion-card) !important;
+}
+
+/* Smooth transitions for all emotion changes */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Emotion-specific hover effects - only apply when custom emotion is set */
+.emotion-happy .card:hover {
+  animation: pulse-happy 0.6s ease;
+}
+
+.emotion-sad .card:hover {
+  animation: pulse-sad 0.6s ease;
+}
+
+.emotion-anxious .card:hover {
+  animation: pulse-anxious 0.6s ease;
+}
+
+.emotion-angry .card:hover {
+  animation: pulse-angry 0.6s ease;
+}
+
+.emotion-calm .card:hover {
+  animation: pulse-calm 0.6s ease;
+}
+
+.emotion-excited .card:hover {
+  animation: pulse-excited 0.6s ease;
+}
+
+.emotion-tired .card:hover {
+  animation: pulse-tired 0.6s ease;
+}
+
+.emotion-stressed .card:hover {
+  animation: pulse-stressed 0.6s ease;
+}
+
+/* Default theme hover effects */
+.emotion-default .card:hover {
+  animation: pulse-neutral 0.6s ease;
+}
+
+/* Emotion-aware navbar */
+.emotion-navbar {
+  background: var(--emotion-gradient) !important;
+  box-shadow: var(--emotion-shadow) !important;
+}
+
+/* Emotion-aware form elements */
+.emotion-input {
+  border: 2px solid var(--emotion-border) !important;
+  color: var(--emotion-text) !important;
+  background: var(--emotion-card) !important;
+}
+
+.emotion-input:focus {
+  border-color: var(--emotion-primary) !important;
+  box-shadow: 0 0 0 3px rgba(var(--emotion-primary-rgb), 0.1) !important;
+}
+
+/* Emotion-aware loading states */
+.emotion-loading {
+  border: 3px solid var(--emotion-border) !important;
+  border-top: 3px solid var(--emotion-primary) !important;
+}
+
+/* Responsive emotion adjustments */
+@media (max-width: 768px) {
+  .emotion-card {
+    margin: 0.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  .emotion-button {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Health Summary PDF Styles */
+.health-summary-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.health-summary-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.health-summary-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.health-summary-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.health-summary-form {
+  background: #f4bcbc;
+  border-radius: 22px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 32px 0 rgba(123, 63, 63, 0.12);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #7b3f3f;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7b3f3f;
+  box-shadow: 0 0 0 3px rgba(123, 63, 63, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.health-summary-preview {
+  background: #f4bcbc;
+  border-radius: 22px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 32px 0 rgba(123, 63, 63, 0.12);
+}
+
+.health-summary-preview h3 {
+  color: #7b3f3f;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.preview-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.preview-header h4 {
+  color: #7b3f3f;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.preview-header p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.preview-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.preview-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.preview-section h5 {
+  color: #7b3f3f;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.preview-section p {
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+.health-summary-actions {
+  text-align: center;
+}
+
+.download-pdf-btn {
+  background: #7b3f3f;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(123, 63, 63, 0.3);
+}
+
+.download-pdf-btn:hover:not(:disabled) {
+  background: #6a3535;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(123, 63, 63, 0.4);
+}
+
+.download-pdf-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .health-summary-container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .health-summary-form,
+  .health-summary-preview {
+    padding: 1.5rem;
+  }
+  
+  .health-summary-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

@@ -1,0 +1,271 @@
+/* Health Summary PDF Component Styles */
+.health-summary-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Section */
+.health-summary-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.health-summary-title {
+  margin: 0 0 15px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.health-summary-subtitle {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: white;
+}
+
+/* Form Section */
+.health-summary-form {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Generate PDF Button */
+.generate-pdf-btn {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.generate-pdf-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(67, 233, 123, 0.4);
+}
+
+.generate-pdf-btn:disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* PDF Preview Section */
+.pdf-preview-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.preview-title {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 15px;
+}
+
+.pdf-preview {
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* PDF Header */
+.pdf-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.pdf-main-title {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.pdf-info {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.pdf-info p {
+  margin: 5px 0;
+}
+
+/* PDF Content */
+.pdf-content {
+  color: #333;
+}
+
+.pdf-content h2 {
+  margin: 25px 0 15px 0;
+  color: #667eea;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.patient-info {
+  margin-bottom: 25px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.info-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.symptoms-text,
+.menstrual-text,
+.medications-text,
+.notes-text {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  margin-top: 10px;
+  line-height: 1.6;
+  min-height: 60px;
+}
+
+/* PDF Footer */
+.pdf-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #dee2e6;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.pdf-footer p {
+  margin: 8px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .health-summary-container {
+    padding: 15px;
+  }
+  
+  .health-summary-header {
+    padding: 20px;
+  }
+  
+  .health-summary-title {
+    font-size: 2rem;
+  }
+  
+  .health-summary-subtitle {
+    font-size: 1rem;
+  }
+  
+  .health-summary-form,
+  .pdf-preview-section {
+    padding: 20px;
+  }
+  
+  .pdf-preview {
+    padding: 20px;
+  }
+  
+  .pdf-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-summary-title {
+    font-size: 1.6rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+  }
+  
+  .generate-pdf-btn {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .pdf-preview {
+    padding: 15px;
+  }
+  
+  .pdf-main-title {
+    font-size: 1.5rem;
+  }
+} 

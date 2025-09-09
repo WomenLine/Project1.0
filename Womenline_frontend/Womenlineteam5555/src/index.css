@@ -1,0 +1,35 @@
+body {
+  background: #7b3f3f;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: #7b3f3f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background: #ccc;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Space Settings</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #7b3f3f;
+      --primary-2: #a05252;
+      --accent: #f4bcbc;
+    }
+    .wl-header { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color: #fff; padding: 18px; text-align: center; border-radius: 0 0 14px 14px; box-shadow: 0 8px 24px rgba(123, 63, 63, 0.12); }
+    .wl-header h1 { margin: 0; font-size: 1.6rem; }
+    .wl-header p { margin: 6px 0 0; opacity: 0.9; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 12px; }
+    .card { border: 2px solid #ecdede; border-radius: 16px; padding: 12px; background: #fff; box-shadow: 0 8px 24px rgba(123, 63, 63, 0.08); }
+    .section h3 { color: var(--primary); display: flex; align-items: center; gap: 8px; }
+    .toggle-switch .slider { background-color: #e9d1d1; }
+    input:checked + .slider { background-color: var(--primary-2); }
+    .save-btn { background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
+  </style>
+</head>
+<body>
+  <div class="wl-header">
+    <div class="wrap">
+      <h1>🛡️ Safe Space Settings</h1>
+      <p>Customize your safety and comfort preferences</p>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top: 14px;">
+    <div class="card">
+      <div class="section">
+        <h3>Personal Comfort &amp; Safety</h3>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="comfortToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Personal Comfort Mode</strong>
+            <p>Filter sensitive content and enable gentle interactions</p>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="safetyFiltersToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Enhanced Safety Filters</strong>
+            <p>Block inappropriate content and harmful language</p>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="anonymousToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Anonymous Mode</strong>
+            <p>Hide your profile information from other users</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Privacy Settings</h3>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="privateToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Private Mode</strong>
+            <p>Make your profile and activities private</p>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="restrictedToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Restricted Chat Access</strong>
+            <p>Only allow messages from approved contacts</p>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="hideOnlineToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Hide Online Status</strong>
+            <p>Don't show when you're online or active</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Appearance</h3>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Dark Mode</strong>
+            <p>Switch to dark theme for comfortable viewing</p>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="reducedMotionToggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Reduced Motion</strong>
+            <p>Minimize animations and transitions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Block Users</h3>
+        <div class="block-user-container">
+          <div class="input-group">
+            <input type="text" id="blockUserInput" placeholder="Enter username to block" />
+            <button onclick="blockUser()" class="block-btn">Block User</button>
+          </div>
+          <div class="blocked-users">
+            <h4>Blocked Users</h4>
+            <ul id="blockedUsersList"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section emergency-section">
+        <h3>Emergency Settings</h3>
+        <div class="setting-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="panicModeToggle" />
+            <span class="slider danger"></span>
+          </label>
+          <div class="setting-info">
+            <strong>Panic Mode</strong>
+            <p>Quickly hide all activity and enable maximum privacy</p>
+          </div>
+        </div>
+        <button id="emergencyContactBtn" class="emergency-btn">Set Emergency Contact</button>
+      </div>
+
+      <div id="statusMessage" class="status-message"></div>
+      <div class="save-section">
+        <button onclick="saveSettings()" class="save-btn">Save All Settings</button>
+        <button onclick="resetSettings()" class="reset-btn">Reset to Default</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center p-4 mt-6" style="color:#666">Made with ❤️ for Women | © 2025 Womenline Project</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

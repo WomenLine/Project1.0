@@ -1,0 +1,143 @@
+.appointment-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(250, 215, 215);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.card {
+  font-weight: 600;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 350px;
+  margin: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #7b3f3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #6a3535;
+}
+
+.womenbg {
+  width: 100%;
+  background-color: rgb(143, 53, 53);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 60px;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  font-size: 1rem;
+}
+
+.navbar ul {
+  overflow: none;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: right;
+  list-style: none;
+  margin: 3px 3px;
+}
+
+.navbar li a {
+  padding: 3px 3px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li a:hover {
+  color: #f4bcbc;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin: 1rem;
+  }
+  
+  .appointment-content {
+    padding: 80px 1rem 80px 1rem;
+  }
+} 

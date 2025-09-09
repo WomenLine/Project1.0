@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome to Womenline!",
+  "login": "Log In",
+  "signup": "Sign Up",
+  "dashboard": "Dashboard",
+  "health_form": "Personal & Health Form",
+  "get_started": "Get Started",
+  "email": "Email Address",
+  "password": "Password",
+  "remember_me": "Remember me",
+  "forgot_password": "Forgot Password?",
+  "or": "OR",
+  "dont_have_account": "Don't have an account?",
+  "information": "information"
+} 
